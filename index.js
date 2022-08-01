@@ -21,7 +21,6 @@ const newBook = (title, author) => {
     <button class="remove">Remove</button>
     <hr>
     </div>
-    form.reset();
     `
 };
 
@@ -29,7 +28,7 @@ const removeBooks = () => {
     newDiv.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove')) {
             let list = e.target.parentElement;
-            let Title = list.childNodes[2].value;
+            let bookTitle = list.childNodes[2].value;
             let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
             localStorage.setItem('book', JSON.stringify(remain));
             newDiv.remove(list);
@@ -58,5 +57,7 @@ button.addEventListener('click', (e) => {
     e.preventDefault();
     if (title.value === "" && author.value === "") {
         alert('Please fill in all the fields');
+    } else {
+        newBook(title.value, author.value)
     }
 });
