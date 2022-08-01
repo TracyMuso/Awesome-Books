@@ -21,42 +21,48 @@ const newBook = (title, author) => {
     <button class="remove">Remove</button>
     <hr>
     </div>
-    form.reset();
     `
+    form.reset();
 };
 
 const removeBooks = () => {
     newDiv.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove')) {
             let list = e.target.parentElement;
-            let Title = list.childNodes[2].value;
+            let bookTitle = list.childNodes[4].value;
             let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
             localStorage.setItem('book', JSON.stringify(remain));
-            newDiv.remove(list);
+            newDiv.removeChild(list);
         }
     })
 }
 removeBooks();
 //Function to get books from Local Storage
-const getDataFromStorage = () => {
+const getDataFromStore = () => {
     window.addEventListener('load', () => {
-        let books = JSON.parse(localStorage.getItem('book'))
-        //     books.forEach((objectData) => {
-        //         newDiv.innerHTML += `<div>
-        // <p><strong>${objectData.bookTitle}</strong></p>
-        // <p><strong>${objectData.bookAuthor}</strong></p>
-        // <button class="remove">Remove</button>
-        // <hr>
-        // </div>`
-        //         bookArr.push(books);
-        //     });
-    })
-}
-getDataFromStorage();
+        if (localStorage.getItem('book')) {
+            const books = JSON.parse(localStorage.getItem('book'));
+            books.forEach((data) => {
+                newDiv.innerHTML += `<div>
+              <p><strong>${data.bookTitle}</strong></p>
+              <p><strong>${data.bookAuthor}</strong></p>
+              <button class="remove">delete</button>
+              <hr/>
+              </div>`;
+                bookArr.push(books);
+            });
+        }
+    });
+};
+getDataFromStore();
+
 // Call new books function
 button.addEventListener('click', (e) => {
     e.preventDefault();
     if (title.value === "" && author.value === "") {
         alert('Please fill in all the fields');
+    } else {
+        newBook(title.value, author.value)
     }
 });
+
