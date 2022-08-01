@@ -29,7 +29,7 @@ const removeBooks = () => {
     newDiv.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove')) {
             let list = e.target.parentElement;
-            let bookTitle = list.childNodes[4].value;
+            let bookTitle = list.childNodes.value;
             let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
             localStorage.setItem('book', JSON.stringify(remain));
             newDiv.removeChild(list);
@@ -38,10 +38,10 @@ const removeBooks = () => {
 }
 removeBooks();
 //Function to get books from Local Storage
-const getDataFromStore = () => {
+const getDataFromStorage = () => {
     localStorage.getItem('book')
 };
-getDataFromStore();
+getDataFromStorage();
 
 // Call new books function
 button.addEventListener('click', (e) => {
