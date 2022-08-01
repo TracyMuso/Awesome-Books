@@ -25,3 +25,15 @@ const newBook = (title, author) => {
     form.reset();
     `
 };
+
+function removeBooks() => {
+    newDiv.addEventListener('click', (e) => {
+        if(e.target.classList.contains('remove')) {
+            let list = e.target.parentElement;
+            let Title = list.childNodes[2].value;
+            let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
+            localStorage.setItem('book', JSON.stringify(remain));
+            newDiv.remove(list);
+        }
+    })
+}
