@@ -8,7 +8,7 @@
 
 - HTML & CSS
 - Github
-- Javascrip
+- Javascript
 
 ## Live Demo 
 

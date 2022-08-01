@@ -23,6 +23,7 @@ const newBook = (title, author) => {
     </div>
     `;
 };
+<<<<<<< HEAD
 
 const removeBooks = () => {
   newDiv.addEventListener('click', (e) => {
@@ -56,6 +57,9 @@ const getDataFromStore = () => {
 getDataFromStore();
 
 // Call new books function
+=======
+// Add new books function
+>>>>>>> 7257397e0f5f6516323c36e6cc71ffce3681deaa
 button.addEventListener('click', (e) => {
   e.preventDefault();
   if (title.value === '' && author.value === '') {
@@ -64,3 +68,24 @@ button.addEventListener('click', (e) => {
     newBook(title.value, author.value);
   }
 });
+// Remove book function
+const removeBooks = () => {
+    newDiv.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove')) {
+            let list = e.target.parentElement;
+            let bookTitle = list.childNodes.value;
+            let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
+            localStorage.setItem('book', JSON.stringify(remain));
+            newDiv.removeChild(list);
+            localStorage.removeItem('list');
+        }
+    })
+}
+removeBooks();
+//Function to get books from Local Storage
+const getDataFromStorage = () => {
+    localStorage.getItem('book')
+};
+getDataFromStorage();
+
+
