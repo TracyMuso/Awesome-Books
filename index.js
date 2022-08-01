@@ -24,7 +24,16 @@ const newBook = (title, author) => {
     `
     form.reset();
 };
-
+// Add new books function
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (title.value === "" && author.value === "") {
+        alert('Please fill in all the fields');
+    } else {
+        newBook(title.value, author.value)
+    }
+});
+// Remove book function
 const removeBooks = () => {
     newDiv.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove')) {
@@ -33,6 +42,7 @@ const removeBooks = () => {
             let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
             localStorage.setItem('book', JSON.stringify(remain));
             newDiv.removeChild(list);
+            localStorage.removeItem('list');
         }
     })
 }
@@ -43,12 +53,4 @@ const getDataFromStorage = () => {
 };
 getDataFromStorage();
 
-// Call new books function
-button.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (title.value === "" && author.value === "") {
-        alert('Please fill in all the fields');
-    } else {
-        newBook(title.value, author.value)
-    }
-});
+
