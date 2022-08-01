@@ -22,7 +22,7 @@ const newBook = (title, author) => {
     <hr>
     </div>
     `
-    form.reset();
+
 };
 // Add new books function
 button.addEventListener('click', (e) => {
@@ -31,7 +31,16 @@ button.addEventListener('click', (e) => {
         alert('Please fill in all the fields');
     } else {
         newBook(title.value, author.value)
+
     }
+    e.preventDefault();
+    if (title.value === "" && author.value === "") {
+        alert('Please fill in all the fields');
+    } else {
+        newBook(title.value, author.value)
+
+    }
+
 });
 // Remove book function
 const removeBooks = () => {
@@ -42,7 +51,7 @@ const removeBooks = () => {
             let remain = bookArr.filter((book) => book.bookTitle !== bookTitle);
             localStorage.setItem('book', JSON.stringify(remain));
             newDiv.removeChild(list);
-            localStorage.removeItem('list');
+
         }
     })
 }
