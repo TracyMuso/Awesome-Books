@@ -39,20 +39,7 @@ const removeBooks = () => {
 removeBooks();
 //Function to get books from Local Storage
 const getDataFromStore = () => {
-    window.addEventListener('load', () => {
-        if (localStorage.getItem('book')) {
-            const books = JSON.parse(localStorage.getItem('book'));
-            books.forEach((data) => {
-                newDiv.innerHTML += `<div>
-              <p><strong>${data.bookTitle}</strong></p>
-              <p><strong>${data.bookAuthor}</strong></p>
-              <button class="remove">delete</button>
-              <hr/>
-              </div>`;
-                bookArr.push(books);
-            });
-        }
-    });
+    localStorage.getItem('book')
 };
 getDataFromStore();
 
