@@ -52,4 +52,3 @@ button.addEventListener('click', (e) => {
         newBook(title.value, author.value)
     }
 });
-
