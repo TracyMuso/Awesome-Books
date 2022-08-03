@@ -1,3 +1,20 @@
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
+// UI class to handle all UI events
+class UI {
+  static showBooks() {
+    const bookInfo {
+      Title: title,
+      Author: author,
+    };
+  }
+}
+
 const bookArr = [];
 const title = document.getElementById('book-title');
 const author = document.getElementById('author');
