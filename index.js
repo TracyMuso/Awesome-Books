@@ -1,74 +1,52 @@
+
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
+    this.id = Math.random();
   }
 }
 
 // UI class to handle all UI events
 class UI {
-  static showBooks() {
-    const bookInfo {
-      Title: title,
-      Author: author,
-    };
-  }
-}
+  static showBooks(bookArr) {
+    const table = document.querySelector('.table');
+    table.innerHTML = "";
+    bookArr.forEach((book, index) => {
+      const row = document.createElement('tr');
+      const td1 = document.createElement('td');
+      td1.innerHTML = book.author;
+      const td2 = document.createElement('td');
+      td2.innerHTML = book.title;
+      const button = document.createElement('button')
+      button.className = 'remove';
+      button.addEventListener('click', () => {
+        library.removeBook(book.id);
+      });
+      td2.appendChild(button);
+      row.append(td1, td2);
+      table.appendChild(row);
 
-const bookArr = [];
-const title = document.getElementById('book-title');
-const author = document.getElementById('author');
-const bookContainer = document.querySelector('.added-books');
-
-const form = document.querySelector('.form');
-// Add new book function
-function newBook(bookTitle, bookAuthor) {
-  const objectData = {
-    bookTitle,
-    bookAuthor,
-  };
-  bookArr.push(objectData);
-  // localStorage.setItem('books', JSON.stringify(bookArr));
-  const newDiv = document.createElement('div');
-  newDiv.classList.add('my-list');
-  bookContainer.appendChild(newDiv);
-  bookArr.forEach((book, index) => {
-    newDiv.innerHTML = `<div>
-        <p><strong>${book.bookTitle}</strong></p>
-        <p><strong>${book.bookAuthor}</strong></p>
-        <button class="remove" id="${index}">Remove</button>
-        <hr>
-        </div>
-        `;
-    form.reset();
-    // Button action to remove books
-    const remove = newDiv.querySelector('.remove');
-    remove.addEventListener('click', () => {
-      bookArr.splice(index, 1);
-      bookContainer.removeChild(newDiv);
-      localStorage.setItem('books', JSON.stringify(bookArr));
-    });
-  });
-  localStorage.setItem('books', JSON.stringify(bookArr));
-}
-// Add new books function
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (title.value === '' && author.value === '') {
-    alert('Please fill in all the fields');
-  } else {
-    newBook(title.value, author.value);
-  }
-});
-
-//  Function to get books from Local Storage
-
-function getDataFromStorage() {
-  const books = JSON.parse(localStorage.getItem('books'));
-  if (books) {
-    books.forEach((book) => {
-      newBook(book.bookTitle, book.bookAuthor);
     });
   }
 }
-getDataFromStorage();
+
+class Library {
+  constructor() {
+    this.collection = JSON.parse(localStorage.getItem('books')) || [];
+
+  }
+  addBook(book) {
+    this.collection.push(book);
+    localStorage.setItem('books', JSON.stringify(this.collection));
+    UI.showBooks(this.collection);
+  }
+  removeBook(id) {
+    this.collection = this.collection.filter((book) => book.id !== id);
+    localStorage.setItem('books', JSON.stringify(this.collection));
+    UI.showBooks(this.collection);
+  }
+}
+
+
+
