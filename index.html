@@ -10,13 +10,26 @@
 </head>
 
 <body>
-    <section id="awesome-books">
+    <header>
+        <a href="#" class="logo">Awesome Books</a>
+        <nav>
+            <ul>
+                <li> <a href="#book-list">List</a> </li>
+                <li> <a href="#Add-book">Add new</a> </li>
+                <li> <a href="#contact">Contact</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="date"></div>
+    <section id="book-list" >
         <h1>All Awesome books</h1>
         <div class="added-books">
             <table class="table">
             </table>
         </div>
         <hr>
+    </section>
+    <section id="Add-book">
         <h1>Add a new book</h1>
         <form class="form">
             <span class="error"></span>
@@ -26,6 +39,19 @@
             <input type="text" id="author" placeholder="Author"><br><br>
             <button type="submit" class="btn" id="btn">Add</button>
         </form>
+
+    </section>
+    <section class="contact">
+        <h1>Contact Information</h1>
+        <div>
+            <p>Do you have any question or you just need to say "hello?"</p>
+            <h2>You can reach out to us!</h2>
+            <ul>
+                <li>Our email awesomebooks@gmail.com</li>
+                <li>Our phone number 0123456789</li>
+                <li>Our address Street 12 city, Country.</li>
+            </ul>
+        </div>
     </section>
     <script src="index.js"></script>
 </body>
