@@ -14,6 +14,11 @@ class UI {
   static showBooks(bookArr) {
     const table = document.querySelector('.table');
     table.innerHTML = '';
+    // edit
+    if (this.collection.addBook().length === 0) {
+    table.innerHTML = '<p class="empty">No books in your collection</p>';
+    }
+    // edit
     bookArr.forEach((book, index) => {
       const row = document.createElement('tr');
       const td1 = document.createElement('p');
@@ -84,3 +89,36 @@ window.onload = () => {
   }
   setInterval(updateTime, 1000);
 };
+
+
+const homepage = document.querySelector('.home');
+const addNew = document.querySelector('.add')
+const contactpage = document.querySelector('.contact');
+const homeSection = document.querySelector('#book-list');
+const bookSection = document.querySelector('#Add-book');
+const contactSection = document.querySelector('#contactUs');
+const Clicked = false;
+
+homepage.addEventListener('click', () => {
+  if (Clicked === false) {
+    homeSection.style.display = 'block';
+    bookSection.style.display = 'none';
+    contactSection.style.display = 'none';
+  }
+});
+
+addNew.addEventListener('click', () => {
+  if (Clicked === false) {
+    homeSection.style.display = 'none';
+    bookSection.style.display = 'block';
+    contactSection.style.display = 'none';
+  }
+});
+
+contactpage.addEventListener('click', () => {
+  if (Clicked === false) {
+    homeSection.style.display = 'none';
+    bookSection.style.display = 'none';
+    contactSection.style.display = 'block';
+  }
+});

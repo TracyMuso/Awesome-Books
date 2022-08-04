@@ -16,14 +16,16 @@ header {
     flex-direction: row;
     justify-content: space-between; 
     align-items: center;
+    background: rgb(26, 26, 110);
 }
 
 .logo {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #c3c3c3;
     font-size: 20px;
     font-weight: 700;
     padding: 0.3rem;
+    margin-left: 20px;
 }
 
 .date {
@@ -46,7 +48,7 @@ header {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #c3c3c3;
 }
 
 #pages li a {
@@ -55,12 +57,14 @@ a {
 }
 
 .add {
-    border-left: solid 1px black;
-    border-right: solid 1px black;
+    border-left: solid 1px #c8c4c4;
+    border-right: solid 1px #c8c4c4;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
 }
-
+#Add-book, #contactUs {
+  display: none;
+}
 h1 {
   text-align: center;
   font-weight: 700;
@@ -158,4 +162,9 @@ section {
 footer {
     border-top: 1px solid #c8c4c4;
     padding: 1rem;
+}
+footer p {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 5%;
 }
