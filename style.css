@@ -1,14 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 body {
   width: 100%;
   font-family: 'Comic Neue', cursive;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: rgb(37, 239, 239);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0.3rem;
+}
+
+.date {
+    font-size: 15px;
+    color: rgb(16, 16, 16);
+    float: right;
+    margin-right: 2rem;
+    padding: 0.5rem;
+}
+
+#pages {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 15rem;
+    padding: 0.5rem;
+    margin-right: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#pages li a {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.add {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
 }
 
 h1 {
   text-align: center;
   font-weight: 700;
+  color: rgb(241, 39, 39);
 }
+
+h2 {
+    font-weight: 400;
+    color: rgb(241, 39, 39);
+  }
 
 form {
   width: 50%;
@@ -37,14 +99,14 @@ button:hover {
 }
 
 hr {
-  color: rgb(50, 49, 49);
+  color: rgb(105, 102, 102);
   width: 20%;
 }
 
 table {
   width: 90%;
   margin: 2rem auto;
-  border: solid 2px rgb(27, 27, 27);
+  border: solid 2px rgb(241, 162, 162);
 }
 
 tr {
@@ -73,7 +135,27 @@ tr:nth-child(even) {
   border: solid 1px rgb(45, 43, 43);
 }
 
+#contact-info {
+    margin: 2rem auto;
+    width: 60%;
+    align-items: center;
+}
+
+#contact-info ul li {
+    padding: 0.3rem;
+}
+
 .error {
   color: rgb(255, 0, 0);
   font-size: 13px;
+}
+
+section {
+    width: 100%;
+    padding: 2rem 0.5rem;
+}
+
+footer {
+    border-top: 1px solid #c8c4c4;
+    padding: 1rem;
 }
