@@ -11,16 +11,20 @@
 
 <body>
     <section id="awesome-books">
-        <h1>Awesome books</h1>
+        <h1>All Awesome books</h1>
         <div class="added-books">
+            <table class="table">
+            </table>
         </div>
+        <hr>
+        <h1>Add a new book</h1>
         <form class="form">
+            <span class="error"></span>
             <label for="book-title"></label>
             <input type="text" id="book-title" placeholder="Title"><br><br>
             <label for="author"></label>
             <input type="text" id="author" placeholder="Author"><br><br>
             <button type="submit" class="btn" id="btn">Add</button>
-
         </form>
     </section>
     <script src="index.js"></script>
