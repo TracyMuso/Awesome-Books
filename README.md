@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet).
 
-<img src="https://github.com/elfin-git/Awesome-Books/blob/main/img/ScreenShot1.png" width="600" height="500"/>
+<img src="./img/ScreenShot1.png" width="600" height="500"/>
 
 ## Built With
 
@@ -14,15 +14,15 @@
 
 ## Live Demo 
 
-[liveDemo](https://elfin-git.github.io/Awesome-Books/)
+[liveDemo](https://TracyMuso.github.io/Awesome-Books/)
 
 ## Authors
 
 👤 **Tracy Musongole**
 
-- GitHub: [@githubhandle](https://github.com/elfin-git)
+- GitHub: [@githubhandle](https://github.com/TracyMuso)
 - Twitter: [@twitterhandle](https://twitter.com/tracy_muso)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/tracy-musongole)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/tracy-muso)
 
 👤 **William Kidde**
 
@@ -35,7 +35,7 @@
 Contributions, issues, and feature requests are welcome!
 
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/TracyMuso/Awesome-Books/issues
 
 ## Show your support
 
